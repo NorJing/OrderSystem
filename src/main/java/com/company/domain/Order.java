@@ -32,10 +32,10 @@ public class Order {
     	this.id = id;
 	}
 
-	public Order(Long id, Customer customer, Service service, String note) {
+	public Order(Long id, Customer customer, Service services, String note) {
 		this.id = id;
 		this.customer = customer;
-		this.service = service;
+		this.service = services;
 		this.note = note;
 	}
 
@@ -60,11 +60,11 @@ public class Order {
 		this.customer = customer;
 	}
 
-	public Service getService() {
+	public Service getServices() {
 		return service;
 	}
 
-	public void setService(Service service) {
+	public void setServices(Service service) {
 		this.service = service;
 	}
 

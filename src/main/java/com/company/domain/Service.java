@@ -1,6 +1,7 @@
 package com.company.domain;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -26,12 +27,6 @@ public class Service {
     public Service(Long id, String type) {
         this.id = id;
         this.type = type;
-    }
-
-    public Service(Long id, String type, Set<Order> orders) {
-        this.id = id;
-        this.type = type;
-        this.orders = orders;
     }
 
     public Set<Order> getOrders() {

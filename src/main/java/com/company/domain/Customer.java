@@ -31,10 +31,6 @@ public class Customer{
     @Column(name = "destinationaddress")
     private String destinationAddress;
 
-	//@OneToMany(targetEntity=Order.class)
-    //@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity=Order.class)
-    //private List<Order> orders = new ArrayList<>();
-
     @OneToMany(mappedBy = "customer")
     private Set<Order> orders;
 
@@ -52,13 +48,6 @@ public class Customer{
         this.id = id;
     }
 
-    public Customer(String name, String phoneNumber, String sourceAddress, String destinationAddress) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.sourceAddress = sourceAddress;
-        this.destinationAddress = destinationAddress;
-    }
-
     public Customer(Long id, String name, @NotNull String phoneNumber,
                     @Size(min = 8) String sourceAddress, String destinationAddress) {
         this.id = id;
@@ -66,16 +55,6 @@ public class Customer{
         this.phoneNumber = phoneNumber;
         this.sourceAddress = sourceAddress;
         this.destinationAddress = destinationAddress;
-    }
-
-    public Customer(Long id, String name, @NotNull String phoneNumber,
-                    @Size(min = 5) String sourceAddress, String destinationAddress, Set<Order> orders) {
-        this.id = id;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.sourceAddress = sourceAddress;
-        this.destinationAddress = destinationAddress;
-        this.orders = orders;
     }
 
     public Long getId() {
@@ -125,14 +104,6 @@ public class Customer{
     public void setOrders(Set<Order> orders) {
         this.orders = orders;
     }
-
-    /*public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }*/
 
     @Override
     public String toString() {
