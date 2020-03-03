@@ -1,0 +1,8 @@
+create table if not exists User (
+  id identity,
+  name varchar(50) not null,
+  phoneNumber varchar(20) not null,
+  sourceAddress varchar(50) not null,
+  destinationAddrss varchar(50) not null
+);
+

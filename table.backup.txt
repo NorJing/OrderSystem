@@ -1,0 +1,29 @@
+create table if not exists customer (
+  id identity,
+  name varchar(50) not null,
+  phoneNumber varchar(20) not null,
+  sourceAddress varchar(50) not null,
+  destinationAddrss varchar(50) not null
+);
+
+create table if not exists order (
+  id identity,
+  service varchar(50) not null,
+  dateServiceCarryOn timestamp not null,
+  note varchar(50) not null
+);
+
+create table if not exists order (
+  id bigint(20),
+  service varchar(50) not null,
+  dateServiceCarryOn timestamp not null,
+  note varchar(50) not null
+);
+
+create table if not exists customer_orders (
+  user_id bigint not null,
+  order_id bigint not null
+);
+
+alter table customer_orders add foreign key (user_id) references customer(id);
+alter table customer_orders add foreign key (order_id) references order(id);
