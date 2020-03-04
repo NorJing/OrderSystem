@@ -12,8 +12,8 @@ public class Service {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "type")
-    private String type; // moving, buy, cleaning etc.. see db query
+    @Column(name = "choice")
+    private String choice; // moving, buy, cleaning etc.. see db query
 
     @OneToMany(mappedBy = "service")
     private Set<Order> orders;
@@ -27,9 +27,9 @@ public class Service {
         this.id = id;
     }
 
-    public Service(Long id, String type) {
+    public Service(Long id, String choice) {
         this.id = id;
-        this.type = type;
+        this.choice = choice;
     }
 
     /*public Services getServices() {
@@ -56,12 +56,12 @@ public class Service {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getChoice() {
+        return choice;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setChoice(String choice) {
+        this.choice = choice;
     }
 }
 

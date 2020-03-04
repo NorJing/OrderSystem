@@ -33,12 +33,12 @@ public class PreLoadData {
                         "Askerveien 1", "Sagene gate 1");
                 customerRepository.save(customer2);
 
-                String type1 = "packing, cleaning";
-                Service service1 = new Service(1L, type1);
+                String choice1 = "packing, cleaning";
+                Service service1 = new Service(1L, choice1);
                 serviceRepository.save(service1);
 
-                String type2 = "moving, selling";
-                Service service2 = new Service(2L, type2);
+                String choice2 = "moving, selling";
+                Service service2 = new Service(2L, choice2);
                 serviceRepository.save(service2);
 
                 Order order = new Order(1L, customer1, service1, "note 1x");

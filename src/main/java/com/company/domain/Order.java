@@ -24,10 +24,10 @@ public class Order {
 	@JoinColumn(name = "services_id")
 	private Services services;*/
 
-	@Column(name = "date_service_carry_on")
-    private Date dateServiceCarryOn;
+	@Column(name = "order_time")
+    private Date orderTime;
 
-	@Column(name = "text")
+	@Column(name = "note")
     private String note;
     
     Order(){}
@@ -45,7 +45,7 @@ public class Order {
 
 	@PrePersist
 	void serviceCarryOnDate() {
-    	this.dateServiceCarryOn = new Date();
+    	this.orderTime = new Date();
 	}
 
 	public Long getId() {
@@ -72,12 +72,20 @@ public class Order {
 		this.service = service;
 	}
 
-	public Date getDateServiceCarryOn() {
-		return dateServiceCarryOn;
+	public Service getService() {
+		return service;
 	}
 
-	public void setDateServiceCarryOn(Date dateServiceCarryOn) {
-		this.dateServiceCarryOn = dateServiceCarryOn;
+	public void setService(Service service) {
+		this.service = service;
+	}
+
+	public Date getOrderTime() {
+		return orderTime;
+	}
+
+	public void setOrderTime(Date orderTime) {
+		this.orderTime = orderTime;
 	}
 
 	public String getNote() {
