@@ -20,6 +20,10 @@ public class Order {
 	@JoinColumn(name = "service_id")
 	private Service service;
 
+	/*@OneToOne
+	@JoinColumn(name = "services_id")
+	private Services services;*/
+
 	@Column(name = "date_service_carry_on")
     private Date dateServiceCarryOn;
 

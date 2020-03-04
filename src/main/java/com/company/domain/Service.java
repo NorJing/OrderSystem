@@ -18,6 +18,9 @@ public class Service {
     @OneToMany(mappedBy = "service")
     private Set<Order> orders;
 
+    /*@ManyToOne
+    private Services services;*/
+
     public Service(){}
 
     public Service(Long id) {
@@ -28,6 +31,14 @@ public class Service {
         this.id = id;
         this.type = type;
     }
+
+    /*public Services getServices() {
+        return services;
+    }
+
+    public void setServices(Services services) {
+        this.services = services;
+    }*/
 
     public Set<Order> getOrders() {
         return orders;
